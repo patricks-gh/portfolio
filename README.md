@@ -11,7 +11,7 @@
 
 - 👨‍💻 All of my projects are available at [https://github.com/patricks-gh/portfolio](https://github.com/patricks-gh/portfolio)
 
-- 💬 Ask me about **SQL, Spark, Scala, Hadoop, Big Data, and many more Data Engineering stuff**
+- 💬 Ask me about **SQL, Spark, Scala, Impala, Hive, Hadoop, Big Data, and many more Data Engineering stuff**
 
 - 📫 How to reach me **patrickmarcelinosantos@gmail.com**
 
