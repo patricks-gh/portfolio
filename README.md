@@ -1,5 +1,5 @@
 <h1 align="center">Hi 👋, I'm Patrick Santos</h1>
-<h3 align="center">A developer passionate about turning raw data into reliable systems and game changing insights</h3>
+<h3 align="center">A developer from Philippines that is passionate about turning raw data into reliable systems and game changing insights</h3>
 
 - 🔭 I’m currently working on **Data Pipelines**
 
