@@ -1,10 +1,10 @@
-<div align="center" style="background-image: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1400&q=80'); background-size: cover; padding: 60px 20px; border-radius: 20px;">
+<div align="center" style="background-color:#f9fafb; background-image: url('https://cdn-icons-png.flaticon.com/512/6165/6165221.png'); background-repeat: no-repeat; background-size: 80px; background-position: 40px 40px; padding: 60px 20px; border-radius: 20px;">
 
-<h1 style="color: #ffffff; font-family: 'Segoe UI', sans-serif; font-size: 42px;">
+<h1 style="color: #111827; font-family: 'Segoe UI', sans-serif; font-size: 42px;">
 Hi 👋, I'm <b>Patrick Santos</b>
 </h1>
 
-<h3 style="color: #f0f0f0; font-family: 'Roboto', sans-serif; font-weight: 400;">
+<h3 style="color: #374151; font-family: 'Roboto', sans-serif; font-weight: 400;">
 A developer passionate about turning raw data into reliable systems and game-changing insights
 </h3>
 
@@ -16,7 +16,7 @@ A developer passionate about turning raw data into reliable systems and game-cha
 - 🌱 I’m learning **Python, Snowflake, and AWS**
 - 👯 I’m open to **Python project collaborations**
 - 🤝 I’m looking for help with **Web Development**
-- 👨‍💻 All of my projects are available at [patrick’s portfolio](https://github.com/patricks-gh/portfolio)
+- 👨‍💻 All of my projects are available at [**my GitHub portfolio!**](https://github.com/patricks-gh/portfolio)
 - 💬 Ask me about **SQL, Spark, Scala, Hadoop, Big Data, and more**
 - 📫 Reach me at **patrickmarcelinosantos@gmail.com**
 - ⚡ Fun fact — *I’m ambidextrous, which affects my mouse choices!*
