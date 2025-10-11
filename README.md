@@ -15,7 +15,7 @@
 
 - 📫 How to reach me **patrickmarcelinosantos@gmail.com**
 
-- 📄 Know about my experiences [https://github.com/patricks-gh/portfolio/Patrick Santos.pdf](https://github.com/patricks-gh/portfolio/Patrick Santos.pdf)
+- 📄 Know about my experiences [https://github.com/patricks-gh/portfolio/patrick_santos.pdf](https://github.com/patricks-gh/portfolio/patrick_santos.pdf)
 
 - ⚡ Fun fact **I am an ambidextrous person which affects my mouse choices!**
 
