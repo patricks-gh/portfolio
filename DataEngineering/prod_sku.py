@@ -1,9 +1,12 @@
 import pandas as pd
 import re
 import gspread
+import os
 from gspread_dataframe import get_as_dataframe, set_with_dataframe
 
+# go up two levels: DataEngineering → portfolio → F:\
 gc = gspread.service_account(filename="../../python/auth_keys/service_account.json")
+
 
 sheet = gc.open("Admin - The Beauty Hub Store").worksheet("productlist")
 
@@ -56,6 +59,9 @@ def product_sku_creation(row):
 
 if "SKU" not in df.columns:
     df["SKU"] = ""
+
+#Force the SKU column to be str because some SKU can start like 888- 777- 
+df["SKU"] = df["SKU"].astype(str)
 
 df = df.dropna(how="all").reset_index(drop=True)
 
