@@ -29,7 +29,20 @@ This dashboard highlights which brands dominate the catalog, grouping smaller co
 
 Here’s a snapshot of the **Top Brands (by Product Count) Report Dashboard** built with Streamlit:
 
-![Dashboard Preview](images/brands_report.png)
+![Dashboard Preview](images/dashboard_preview.png)
+
+---
+
+## 📊 The Simple Google Sheet Behind It
+
+It all starts from a straightforward **9-column Google Sheet** — that only contains brands, product names, unit, and etc. 
+
+Here’s a look at the source data that powers the entire dashboard:
+
+![Data Preview](images/data_preview.png)
+
+> ✨ *This shows how powerful Streamlit + Google Sheets can be — turning everyday data into an interactive visual report!*
+
 
 ---
 
@@ -39,3 +52,20 @@ Here’s a snapshot of the **Top Brands (by Product Count) Report Dashboard** bu
 ```bash
 git clone https://github.com/yourusername/beautyhub-topbrands-report.git
 cd catalog_brands
+```
+
+### 2️⃣ Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 3️⃣ Configure Google Sheets Access
+```bash
+Create or download your Google Cloud Service Account JSON key and place it in the following path:
+/python/auth_keys/service_account.json
+```
+
+### 4️⃣ Run the App
+```bash
+streamlit run app.py
+```
