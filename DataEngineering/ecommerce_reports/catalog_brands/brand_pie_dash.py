@@ -142,8 +142,12 @@ with col1:
 
 shown_products = df_plot[df_plot["Brand"] != "Others"]["Products"].sum()
 
+shown_brands = df_plot[df_plot["Brand"] != "Others"]["Brand"].nunique()  # <-- NEW LINE
+total_brands = df_active["Brand"].nunique()
+
 with col2:
     st.markdown("#### :sparkles: 📊 SUMMARY :sparkles:")
+    st.markdown(f"**Total Brands Shown:** {shown_brands} out of {total_brands} unique active brands")
     st.markdown(f"**Total Products Shown:** {df_plot['Products'].sum()}")
     st.markdown(
         f"The brands that are shown make up roughly **60%** "
