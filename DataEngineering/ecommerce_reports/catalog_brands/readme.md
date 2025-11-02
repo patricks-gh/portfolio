@@ -50,8 +50,8 @@ Here’s a look at the source data that powers the entire dashboard:
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/yourusername/beautyhub-topbrands-report.git
-cd catalog_brands
+git clone https://github.com/patricks-gh/portfolio.git
+cd DataEngineering/ecommerce_reports/catalog_brands
 ```
 
 ### 2️⃣ Install Dependencies

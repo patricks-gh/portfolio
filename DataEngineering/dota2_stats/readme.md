@@ -28,7 +28,7 @@ A **Streamlit**-based interactive dashboard that visualizes **top heroes** in th
 
 Here’s a snapshot of the **Dota 2 Insights Dashboard** built with Streamlit:
 
-![Dashboard Preview](images/dashboard_preview.png)
+![Dashboard Preview](images/dota2_dashboard_preview.png)
 
 ---
 
@@ -38,7 +38,7 @@ The data is powered by the **OpenDota API**, which collects and provides compreh
 
 Here’s a look at the website of OpenDota API that powers the entire dashboard:
 
-![Data Preview](images/opendotaapi_preview.png)
+![Data Preview](images/opendotapi_preview.png)
 
 > ✨ *This shows how Streamlit can bring Dota 2 pro game data to life — turning raw stats into actionable insights for players!*
 
@@ -48,5 +48,16 @@ Here’s a look at the website of OpenDota API that powers the entire dashboard:
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/yourusername/dota2-insights-dashboard.git
-cd dota2-insights-dashboard
+git clone https://github.com/patricks-gh/portfolio.git
+cd DataEngineering/dota2_stats
+```
+
+### 2️⃣ Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 3️⃣ Run the App
+```bash
+streamlit run dota2_insights.py
+```
