@@ -8,7 +8,7 @@ import base64
 
 
 # ---- CONNECT TO GOOGLE SHEETS ----
-gc = gspread.service_account(filename="../../../python/auth_keys/service_account.json")
+gc = gspread.service_account(filename="../../../../python/auth_keys/service_account.json")
 sheet = gc.open("Admin - The Beauty Hub").worksheet("productlist")
 df_sheet = get_as_dataframe(sheet, evaluate_formulas=True).dropna(how='all')
 

@@ -1,6 +1,6 @@
 # 🧴 Top Brands Report — The Beauty Hub
 
-A **Streamlit**-based interactive report that visualizes the **dominant brands based on product count** from *The Beauty Hub’s* product catalog, powered directly by data from **Google Sheets**.  
+A **Streamlit**-based interactive report that visualizes the **Top brands by product count** from *The Beauty Hub’s* product catalog, powered directly by data from **Google Sheets**.  
 This dashboard highlights which brands dominate the catalog, grouping smaller contributors into an “Others” category for clarity and insight.
 
 ---
@@ -24,6 +24,12 @@ This dashboard highlights which brands dominate the catalog, grouping smaller co
 | Plotly | Interactive visualization (donut chart) |
 | GSpread | Connects to Google Sheets API |
 | Base64 | Encodes local images for web display |
+
+---
+
+Here’s a snapshot of the **Top Brands (by Product Count) Report Dashboard** built with Streamlit:
+
+![Dashboard Preview](images/brands_report.png)
 
 ---
 
