@@ -1,0 +1,50 @@
+Missing Python executable 'python3', defaulting to 'C:\Users\patrick.santos\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyspark\bin\..' for SPARK_HOME environment variable. Please install Python or specify the correct Python executable in PYSPARK_DRIVER_PYTHON or PYSPARK_PYTHON environment variable to detect SPARK_HOME safely.
++-----------+------------------+-----------------------------------+-----------------+--------+
+|customer_id|customer_name     |email                              |city             |country |
++-----------+------------------+-----------------------------------+-----------------+--------+
+|CUST1000   |Danielle Rodriguez|ewilliams@bell.net                 |Cantumouth       |Ethiopia|
+|CUST1001   |William Mcdowell  |shill@guerra.com                   |West Brian       |Hungary |
+|CUST1002   |Jennifer Fernandez|feliciapoole@winters.com           |West Patriciatown|Iraq    |
+|CUST1003   |Danielle Garcia   |sarawood@hotmail.com               |East Annaburgh   |Qatar   |
+|CUST1004   |William Petersen  |richard59@castillo.com             |Amandamouth      |Iran    |
+|CUST1005   |Heather Jimenez   |goodwinsydney@ellis.biz            |New Josetown     |NULL    |
+|CUST1006   |Jose Tran         |mcdonaldmelissa@johnson.com        |East Gabrielfort |Paraguay|
+|CUST1007   |Aaron Perez       |justin28@atkinson.net              |Williamsmouth    |Barbados|
+|CUST1008   |Jessica Rodriguez |davidtodd@yahoo.com                |Annetteton       |Lesotho |
+|CUST1009   |April Johnston    |brandonskinner@santana-carrillo.net|Moralesfurt      |Poland  |
++-----------+------------------+-----------------------------------+-----------------+--------+
+only showing top 10 rows
++---------+-----------+----------+--------+----------+
+|sale_id  |customer_id|product_id|quantity|sale_date |
++---------+-----------+----------+--------+----------+
+|SALE20000|CUST1059   |PROD5055  |4       |2025-04-04|
+|SALE20001|CUST1001   |PROD5093  |1       |2025-05-14|
+|SALE20002|CUST1253   |PROD5106  |4       |2025-05-16|
+|SALE20003|CUST1139   |PROD5062  |2       |2025-07-20|
+|SALE20004|CUST1036   |PROD5047  |5       |2024-03-22|
+|SALE20005|CUST1159   |PROD5060  |1       |2024-01-24|
+|SALE20006|CUST1008   |PROD5080  |1       |2024-03-27|
+|SALE20007|CUST1232   |PROD5025  |3       |2024-04-14|
+|SALE20008|CUST1098   |PROD5035  |3       |2023-11-16|
+|SALE20009|CUST1146   |PROD5000  |5       |2023-12-11|
++---------+-----------+----------+--------+----------+
+only showing top 10 rows
++-----------+-----------------+--------------------+-----------+
+|customer_id|    customer_name|               email|total_sales|
++-----------+-----------------+--------------------+-----------+
+|   CUST1197|     Willie Miles|fwhitehead@yahoo.com|          0|
+|   CUST1077|Jennifer Martinez|turnerkaren@johns...|          0|
+|   CUST1182|       Eric Smith|davissara@hotmail...|          2|
+|   CUST1258|Daniel Cunningham|chad27@ortiz-rodr...|          2|
+|   CUST1116|     Mason Garcia|   xcollins@king.net|          1|
+|   CUST1154|    Melissa Weeks|hernandezscott@ya...|          0|
+|   CUST1041| Danielle Bennett|     zholt@yahoo.com|          1|
+|   CUST1189|  Whitney Bridges|steincalvin@tyler...|          0|
+|   CUST1219|     Angela Tapia|mcdowelljean@hotm...|          2|
+|   CUST1237|     Andrew Avila|catherine40@mack.com|          4|
++-----------+-----------------+--------------------+-----------+
+only showing top 10 rows
+Customer dev data written to: dev/customers_dev.csv
+SUCCESS: The process with PID 23156 (child process of PID 24712) has been terminated.
+SUCCESS: The process with PID 24712 (child process of PID 29024) has been terminated.
+SUCCESS: The process with PID 29024 (child process of PID 31980) has been terminated.

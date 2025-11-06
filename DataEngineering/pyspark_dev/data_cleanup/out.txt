@@ -1,0 +1,30 @@
+Missing Python executable 'python3', defaulting to 'C:\Users\patrick.santos\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyspark\bin\..' for SPARK_HOME environment variable. Please install Python or specify the correct Python executable in PYSPARK_DRIVER_PYTHON or PYSPARK_PYTHON environment variable to detect SPARK_HOME safely.
+Customer staging data written to: staging/customers_staging.csv
++-----------+----------------+---------------------------+-----------------+----------------------+
+|customer_id|customer_name   |email                      |city             |country               |
++-----------+----------------+---------------------------+-----------------+----------------------+
+|CUST1003   |Danielle Garcia |sarawood@hotmail.com       |East Annaburgh   |Qatar                 |
+|CUST1004   |William Petersen|richard59@castillo.com     |Amandamouth      |Iran                  |
+|CUST1013   |Dana Roberson   |thompsonmary@harrison.net  |West Brittanyton |Pitcairn Islands      |
+|CUST1046   |Steven Juarez   |williamdavidson@yahoo.com  |Vanessaside      |Solomon Islands       |
+|CUST1053   |Angel Miller    |johnhorn@hotmail.com       |Caseybury        |Hungary               |
+|CUST1057   |Rachel Buchanan |sarahcarter@yahoo.com      |East Cole        |Mali                  |
+|CUST1072   |Ashley Lee      |stacytaylor@bernard.com    |Feliciaburgh     |British Virgin Islands|
+|CUST1073   |Frederick Warren|lgarrett@hotmail.com       |North Madisonton |Cyprus                |
+|CUST1086   |Stephanie Wilson|jamessarah@jackson-paul.com|Villegasmouth    |Tuvalu                |
+|CUST1087   |James Nelson    |bvillarreal@evans.com      |Pearsonfort      |Hong Kong             |
+|CUST1089   |Beth Terry      |xchavez@chen.com           |Jamieshire       |Finland               |
+|CUST1092   |Samuel Cabrera  |michael09@yahoo.com        |Mitchellhaven    |Guinea                |
+|CUST1098   |Robert Hays     |zbrown@cooper.com          |New Andreabury   |Western Sahara        |
+|CUST1112   |Rhonda Andrade  |NULL                       |South Ashley     |Peru                  |
+|CUST1120   |Richard Estrada |steven30@hotmail.com       |Port Cameron     |Sweden                |
+|CUST1142   |Charles Morgan  |sharon35@hotmail.com       |South Tracyland  |Tonga                 |
+|CUST1147   |Ronald Roman    |josephhernandez@yahoo.com  |East Jenniferfort|Guadeloupe            |
+|CUST1149   |James Miller    |griffithyvette@yahoo.com   |New Megan        |Libyan Arab Jamahiriya|
+|CUST1150   |Jay Morton      |ymoran@hotmail.com         |Robertsport      |Seychelles            |
+|CUST1151   |Brandi Collins  |ysmith@francis.net         |South Carolyn    |Tokelau               |
++-----------+----------------+---------------------------+-----------------+----------------------+
+only showing top 20 rows
+SUCCESS: The process with PID 20268 (child process of PID 32284) has been terminated.
+SUCCESS: The process with PID 32284 (child process of PID 21148) has been terminated.
+SUCCESS: The process with PID 21148 (child process of PID 26232) has been terminated.
