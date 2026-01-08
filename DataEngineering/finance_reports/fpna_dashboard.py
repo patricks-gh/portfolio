@@ -5,7 +5,6 @@ import streamlit.components.v1 as components
 import plotly.graph_objects as go
 import math
 
-# ---- Page config ----
 st.set_page_config(page_title="FP&A Dashboard", layout="wide")
 st.title("FP&A Dashboard – Income Statement")
 
@@ -13,15 +12,12 @@ st.markdown(
     """
     <style>
     .stApp {
-        /* A slightly more 'Midnight' feel: Lighter Top-Left, smooth transition to Deep Black */
         background: linear-gradient(135deg, #1a1a2e 0%, #11111b 50%, #050505 100%);
         background-attachment: fixed;
     }
     
-    /* Ensures the Streamlit header doesn't cut off the gradient */
     header {background: rgba(0,0,0,0) !important;}
     
-    /* Standardize padding for a clean look */
     .stAppViewBlockContainer {
         padding-top: 3rem;
     }
@@ -30,19 +26,16 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# ---- Load Excel ----
 df = pd.read_excel("income_statement_dashboard_data.xlsx", sheet_name="actuals", header=None)
 targets_df = pd.read_excel("income_statement_dashboard_data.xlsx", sheet_name="targets", header=None)
 
-# ---- Past 4 Year Average Actuals ----
 total_revenue = df.iloc[4, 1]
 total_cogs = df.iloc[9, 1]
 gross_profit = df.iloc[10, 1]
 gross_profit_margin = df.iloc[11, 1]
 
-# ---- 2025–2022 Actuals vs Targets ----
 years = ["2025", "2024", "2023", "2022"]
-year_cols = [2, 3, 4, 5]  # Adjust based on your Excel
+year_cols = [2, 3, 4, 5] 
 revenues = [df.iloc[4, col] for col in year_cols]
 targets = [targets_df.iloc[4, col] for col in year_cols]
 
@@ -60,7 +53,6 @@ def pct_vs_prev(actual, prev):
     color = "#2E8B57" if pct >= 0 else "#FF4500"
     return f"{sign}{pct:.1f}% vs Prev Year", color
 
-# ---- Headers outside containers ----
 col1_header, col2_header = st.columns([2, 1])
 with col1_header:
     st.markdown(
@@ -82,26 +74,20 @@ with col2_header:
         unsafe_allow_html=True
     )
 
-
-# ---- Columns below headers ----
 col1, col2 = st.columns([2, 1])
 
-# ---- Left: High-Density Financial Cockpit (DARK THEME) ----
 with col1:
     max_rev = max(revenues) 
     max_range = max(revenues + targets)
 
-    # 1. Calculate Dynamic Accuracy for Revenue
     total_revenue = sum(revenues)
     total_target = sum(targets)
     avg_accuracy = ((total_revenue / total_target) - 1) * 100 if total_target != 0 else 0
     accuracy_status = "above" if avg_accuracy >= 0 else "below"
 
-    # 2. Identify Top Year Dynamically
     top_rev_val = max(revenues)
     top_year = years[revenues.index(top_rev_val)]
 
-    
     revenue_html = ""
     for i in range(4):
         value_m = revenues[i] / 1_000_000
@@ -115,7 +101,6 @@ with col1:
         prev_value = revenues[i+1] if i < 3 else None
         pct_prev_str, pct_prev_color = pct_vs_prev(revenues[i], prev_value)
         
-        # Dark Mode Adjusted Badges
         badge_bg = "rgba(46, 139, 87, 0.2)" if revenues[i] >= targets[i] else "rgba(255, 69, 0, 0.2)"
 
         revenue_html += f"""
@@ -206,9 +191,7 @@ with col1:
     
     components.html(full_card_html, height=260)
 
-
 with col2:
-    # Prepare data
     bar_years = years[::-1]
     bar_actuals = [rev / 1_000_000 for rev in revenues[::-1]]
     bar_targets = [tgt / 1_000_000 for tgt in targets[::-1]]
@@ -281,17 +264,14 @@ with col2:
 
     fig.update_layout(
         barmode='overlay',
-        # --- NEW BACKGROUND SETTINGS ---
         paper_bgcolor='rgba(0,0,0,0)',
         plot_bgcolor='rgba(0,0,0,0)',
-        # -------------------------------
         font=dict(family='Calibri', size=12, color="white"), 
         yaxis=dict(
             title=dict(text='Revenue ($M)', font=dict(color="white", family="Calibri")),
             dtick=1,
             range=[0, y_range_limit],
             tickfont=dict(color="white", family="Calibri"),
-            # Remove grid lines for a cleaner look on gradient
             showgrid=False,
             zeroline=True,
             zerolinecolor='rgba(255,255,255,0.2)'
@@ -303,7 +283,6 @@ with col2:
             ticktext=bar_years,
             autorange='reversed',
             tickfont=dict(color="white", family="Calibri"),
-            # Remove vertical grid lines
             showgrid=False
         ),
         showlegend=True,
@@ -314,7 +293,7 @@ with col2:
             xanchor="left", 
             x=1.05,
             font=dict(color="white", family="Calibri"),
-            bgcolor='rgba(0,0,0,0)' # Make legend background invisible too
+            bgcolor='rgba(0,0,0,0)'
         ),
         margin=dict(l=0, r=100, t=30, b=0),
         height=266
@@ -322,7 +301,6 @@ with col2:
 
     st.plotly_chart(fig, use_container_width=True)
 
-# ---- COGS SECTION DATA ----
 total_25 = df.iloc[9, 2]
 total_24 = df.iloc[9, 3]
 total_23 = df.iloc[9, 4]
@@ -336,14 +314,12 @@ cogs_rows = [
 ]
 
 table_rows_html = ""
-# Using enumerate so we can target specific row numbers
 for i, item in enumerate(cogs_rows):
     vals = [df.iloc[item["idx"], i_col] for i_col in [2, 3, 4, 5]]
     totals = [total_25, total_24, total_23, total_22]
     
     is_total = "TOTAL" in item["label"]
     
-    # Default styling for rows 1-3
     top_space = "0px"
     bottom_space = "0px"
     label_font_size = "15px"
@@ -352,22 +328,17 @@ for i, item in enumerate(cogs_rows):
     value_color = "#ffffff" 
     row_style = ""
 
-    # 1. Spacing for Row 1 (Index 0) - Push away from header
     if i == 0:
         top_space = "10px"
     
-    # 2. REMOVED GAP: bottom_space for Row 3 is now 0px to keep it tight to TOTAL
     if i == 2:
         bottom_space = "0px" 
 
-    # 3. Styling for TOTAL COGS Row (Index 3)
     if is_total:
         label_color = "#FFFAA0"
         label_font_size = "24px"
         value_color = "#FFFAA0"
         value_font_size = "24px"
-        
-        # REMOVED border-top here to take away the break line
         row_style = "font-weight: 800;" 
         top_space = "16px" 
     
@@ -454,19 +425,17 @@ with col_cogs_left:
 
 with col_cogs_right:
     from plotly.subplots import make_subplots
-    import plotly.graph_objects as go # Ensure go is imported
+    import plotly.graph_objects as go 
 
     plot_years = [2025, 2024, 2023, 2022]
     chart_cols = [2, 3, 4, 5] 
     
-    # --- FIXED: Changed "Total" to "TOTAL" to match your label ---
     labels = [item["label"] for item in cogs_rows if "TOTAL" not in item["label"]]
     colors = ["#5C3E94", "#1E90FF", "#FFA500"]
 
     fig_row = make_subplots(rows=1, cols=4, specs=[[{'type':'domain'}]*4], horizontal_spacing=0.01)
 
     for i, year_col in enumerate(chart_cols):
-        # --- FIXED: Changed "Total" to "TOTAL" here as well ---
         values = [df.iloc[item["idx"], year_col] for item in cogs_rows if "TOTAL" not in item["label"]]
         
         fig_row.add_trace(
@@ -492,9 +461,7 @@ with col_cogs_right:
                     y=-0.1, 
                     xanchor="center", 
                     x=0.5, 
-                    # --- UPDATED: Increased size from 10 to 12 ---
                     font=dict(color="white", size=12, family="Calibri")
-                    # ---------------------------------------------
                 ),
                 margin=dict(l=10, r=10, t=30, b=0), 
                 height=270, 
@@ -510,9 +477,6 @@ with col_cogs_right:
     )
     st.plotly_chart(fig_row, use_container_width=True, config={'displayModeBar': False})
 
-
-
-# ---- GROSS PROFIT REPORTING DATA ----
 gp_actuals = [df.iloc[11, col] for col in [2, 3, 4, 5]]    
 gpm_actuals = [df.iloc[12, col] for col in [2, 3, 4, 5]]   
 years_labels = ["2025", "2024", "2023", "2022"]
@@ -533,9 +497,7 @@ for i in range(4):
         accent_color = "#FF4500" 
         card_bg = "rgba(255, 69, 0, 0.08)"
 
-    # Increased Math for larger Gauge
     gauge_val = min(max(mgn, 0), 100)
-    # Radius 24 semi-circle approx 75.4
     dash_array = 75.4
     dash_offset = dash_array - (gauge_val / 100 * dash_array)
 
@@ -612,23 +574,18 @@ with col_p_left:
     """
     components.html(integrated_gp_card, height=265)
 
-
-
-# ---- DATA EXTRACTION (B5, B10, B12, B13) ----
 avg_rev_val = df.iloc[4, 1]   
 avg_cogs_val = df.iloc[9, 1]  
 avg_gp_val = df.iloc[11, 1]   
 avg_gpm_val = df.iloc[12, 1]  
 
-# Safety check for percentage format
 display_gpm = avg_gpm_val * 100 if avg_gpm_val <= 1.0 else avg_gpm_val
 
 with col_p_right:
-    # Forced Calibri Header
     st.markdown(
         f'''
         <style>
-            @import url('https://fonts.cdnfonts.com/css/calibri'); /* Standard web-safe backup */
+            @import url('https://fonts.cdnfonts.com/css/calibri'); 
         </style>
         <div style="
             font-family: 'Calibri', 'Calibri-Bold', 'Candara', 'Segoe UI', sans-serif !important; 
@@ -646,7 +603,6 @@ with col_p_right:
     
     summary_html = f"""
     <style>
-        /* Force Calibri at the root level */
         * {{
             font-family: 'Calibri', 'Candara', 'Segoe UI', sans-serif !important;
         }}
